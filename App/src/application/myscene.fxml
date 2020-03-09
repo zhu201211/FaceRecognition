@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="layoutPane" prefHeight="340.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.response">
+   <children>
+      <AnchorPane layoutX="-105.0" layoutY="-266.0" prefHeight="668.0" prefWidth="717.0">
+         <children>
+            <MenuBar layoutX="105.0" layoutY="267.0" prefHeight="25.0" prefWidth="609.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="图像采集">
+                  <items>
+                    <MenuItem fx:id="openImage" mnemonicParsing="false" onAction="#OnMenuOpenImage" text="打开图像" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuOpenCamera_1" text="打开摄像头" />
+                        <MenuItem fx:id="normalize" mnemonicParsing="false" onAction="#OnMenuGuiyihua" text="归一化" />
+                        <MenuItem fx:id="saveImage" mnemonicParsing="false" onAction="#OnMenuSaveImage" text="保存图像" />
+                        <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#OnMenuExit" text="关闭" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="样本训练">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#ReadImage" text="读入图像集" />
+                        <MenuItem mnemonicParsing="false" onAction="#OnMenuTrainingImage" text="样本训练" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="图像识别">
+                  <items>
+                    <MenuItem fx:id="openImage" mnemonicParsing="false" onAction="#onMenuOpenTestImage" text="打开图像" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuOpenCamera" text="打开摄像头" />
+                        <MenuItem fx:id="normalize" mnemonicParsing="false" onAction="#onMenuNormforRecogntion" text="归一化" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuRecognizeImage" text="识别图像" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ImageView fx:id="ShowImage_2" fitHeight="300.0" fitWidth="300.0" layoutX="417.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane fx:id="pane_1" layoutX="105.0" layoutY="292.0" prefHeight="300.0" prefWidth="300.0">
+               <children>
+                  <ImageView fx:id="ShowImage_1" fitHeight="300.0" fitWidth="300.0" onMouseClicked="#onMouseClicked" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <TextArea fx:id="TipText" layoutX="104.0" layoutY="598.0" prefHeight="63.0" prefWidth="612.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
